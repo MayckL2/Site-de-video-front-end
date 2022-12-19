@@ -1,0 +1,218 @@
+body{
+    background-color: rgb(14, 13, 13);
+    color: white;
+    font-family: sans-serif;
+    margin: 0px;
+}
+
+// ======== pop up =========
+.pop{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    // top: 13vh;
+    object-fit: contain;
+    z-index: 999;
+    background-color: black;
+    transition: all 0.5s;
+}
+
+// ========= fecha pop up ===========
+main{
+    h1{
+        font-size: 50px;
+        position: fixed;
+        top: 00px;
+        right: 20px;
+        z-index: 9999;
+        cursor: pointer;
+        display: none;
+    }
+    h1:hover{
+        color: red;
+    }
+} 
+
+// ========= minimiza pop up =========
+#min{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 9999;
+    cursor: pointer;
+    display: none;
+}
+.popM{
+    width: 30vw;
+    height: 30vh;
+    position: absolute;
+    right: 0vw;
+    bottom: 0vh;
+    object-fit: contain;
+    z-index: 999;
+    background-color: black;
+    transition: all 0.5s;
+}
+
+
+header{
+    background-color: rgb(3, 3, 56);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 96vw;
+    height: 50px;
+    z-index: 9;
+    position: fixed;
+    
+    img{
+        width: 40px;
+        height: 50px;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+    img:hover{
+        scale: 1.1;
+    }
+
+    ul{
+        position: absolute;
+        top: 50px;
+        left: 0vw;
+        padding: 30px;
+        background-color: rgb(3, 3, 56);
+        width: 14vw;
+        height: 100vh;
+        transition: all 0.5s;
+
+        li{
+            list-style-type: none;
+            padding: 20px;
+            border-bottom: solid;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        li:hover{
+            scale: 1.1;
+        }
+    }
+
+    form{
+        display: flex;
+        align-items: center;
+
+        input{
+            padding: 5px;
+            font-size: 20px;
+            border-radius: 5px 0px 0px 5px;
+            background-color: rgb(14, 13, 13);
+            width: 400px;
+            height: 30px;
+            border: none;
+            color: white;
+            border: transparent solid 1px;
+        }
+        input:focus{
+            outline: none;
+            // background-color: gray;
+            border: blue solid 1px;
+        }
+
+        button{
+            background-color: rgb(14, 13, 13);
+            height: 40px;
+            border-radius: 0px 5px 5px 0px ;
+            border: none;
+            border-left: solid gray;
+        
+            img{
+                height: 30px;
+                cursor: pointer;
+            }
+        }
+        
+    }
+
+    div{
+        display: flex;
+        align-items: center;
+
+        div{
+            width: 50px;
+            height: 50px;
+            border: solid;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0px 20px;
+            cursor: pointer;
+
+            img{
+                width: 50px;
+                height: 60px;
+            }
+        }
+        .sino{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
+        .sino:hover{
+            animation: sino 0.5s infinite;
+        }
+
+        @keyframes sino {
+            0%{rotate: 10deg;}
+            50%{rotate: -10deg;}
+            100%{rotate: 10deg;}
+        }
+    }
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 78vw;
+    float: right;
+    padding: 10px;
+    overflow: hidden;
+    margin-top: 80px;
+    transition: all 0.5s;
+
+    div{
+        position: relative;
+        margin: 2vw;
+        width: 200px;
+        height: 160px;
+        cursor: pointer;
+        transition: all 0.5s;
+        
+        img{
+            width: 200px;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .relogio{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        .relogio:hover{
+            scale: 1.2;
+        }
+
+    }
+    div:hover .relogio{
+        opacity: 1;
+    }
+    div:hover{
+        scale: 1.3;
+    }
+}
