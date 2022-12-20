@@ -1,15 +1,15 @@
 let x= 0
-let select= 0
 let mostra= document.querySelector("#mostra")
-
+let select = 0
 function AbreVideo(e){
     
-    // mostra algo
-    mostra.value= select
     
     // pega o endereço da imagem
     let isso= document.querySelectorAll(".vd")
     let url= isso[e].getAttribute("src")
+
+    isso[e].style.opacity= "0.5"
+
     // mostra opçao de fechar elemento 
     let ex= document.querySelector("#fecha")
     ex.style.display= "block"
@@ -27,7 +27,7 @@ function AbreVideo(e){
     let body= document.querySelector("body")
     body.appendChild(cont)
     
-    // verifica se esta selecionado
+    // verifica se esta minimizado
     if (select == 1){
         cont.setAttribute("src", url)
         cont.setAttribute("class", "popM")
@@ -38,7 +38,6 @@ function AbreVideo(e){
         ex.style.top= "65vh"
         ex.style.scale= "0.5"
 
-        min.addEventListener("click", maximizar)
 
     }
 
@@ -54,24 +53,12 @@ function AbreVideo(e){
         ex.style.top= "0vh"
         ex.style.scale= "1"
         select = 0
+        isso[e].style.opacity= "1"
     }
 
     // relaciona clicar no "x" há funçao "apagar"
     ex.addEventListener("click", apaga)
 
-    // maximiza elemento
-    function maximizar(){
-        cont.setAttribute("class", "popM")
-        // min.style.top= "50px"
-        // min.style.left= "50px"
-        // min.style.scale= "1"
-        // ex.style.top= "0vh"
-        // ex.style.scale= "1"
-        cont.style.width= "100vw"
-        cont.style.height= "100vh"
-        min.style.rotate= "00deg"
-        select = 0
-    }
 
     // minimiza elemento
     function minimiza(){
@@ -83,6 +70,7 @@ function AbreVideo(e){
         ex.style.top= "65vh"
         ex.style.scale= "0.5"
         select = 1
+
     }
 
     // relaciona clicar no ">" há funçao "minimiza"
@@ -112,4 +100,15 @@ function menu(){
             mostra.value= "erro!"
     }
 
+}
+
+// mostra.value= screen.width
+
+let lupa= document.querySelector("#lupa")
+function Mbarra(){
+    mostra.setAttribute("class", "mostraInput")
+}
+
+if (screen.width < 800){
+    lupa.removeAttribute("onclick")
 }
